@@ -1,0 +1,24 @@
+server:
+  type: default
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+
+logging:
+  level: INFO
+  loggers:
+    com.conference: DEBUG
+  appenders:
+    - type: console
+
+database:
+  driverClass: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://mysql-db:3306/conference_db
+  user: root
+  password: root
+  maxSize: 20
+  minSize: 5
+  maxWaitForConnection: 1s

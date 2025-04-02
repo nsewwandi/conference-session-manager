@@ -1,0 +1,15 @@
+
+# IDE files
+.idea/
+.vscode/
+
+# Build files
+target/
+.mvn/
+
+# System files
+.DS_Store
+
+# Log files
+*.log
+

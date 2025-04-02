@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: conference_db
+    ports:
+      - "3306:3306"
+    networks:
+      - mynetwork
+
+  app:
+    build: .
+    container_name: conference-session-manager
+    depends_on:
+      - mysql
+    environment:
+      - DATABASE_URL=jdbc:mysql://mysql-db:3306/conference_db
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+    ports:
+      - "8080:8080"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
