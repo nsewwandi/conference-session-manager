@@ -17,6 +17,7 @@ Before running the application, ensure you have the following installed:
 - **Docker**: To run the application in containers.
 - **Java 17**: Required for running the Dropwizard application.
 - **Maven**: Required for building the project.
+- **MySql**: MySQL is required. Create a database named "conference_db".
 
 ## Setting Up the Application
 
